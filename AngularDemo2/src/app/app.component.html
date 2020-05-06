@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- left box starts -->
+    <div class="col-lg-6">
+      <h4 class="mb-3">Employees</h4>
+      <table class="table">
+        <thead>
+          <tr class="table-dark text-dark">
+            <th>Emp ID</th>
+            <th>Emp Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- left box ends -->
+
+
+    <!-- right box starts -->
+    <div class="col-lg-6">
+      <form [formGroup]="newForm">
+
+        <h5 class="border-bottom pb-2 mb-2">New Employee</h5>
+
+        <div class="form-group form-row">
+          <label for="empId" class="col-md-3 col-form-label">Employee ID:</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Employee ID" name="empId" formControlName="EmpId" [ngClass]="{
+              'is-valid': newForm.get('EmpId').valid && newForm.get('EmpId').touched,
+              'is-invalid': newForm.get('EmpId').invalid && newForm.get('EmpId').touched
+            }">
+
+            <span class="text-danger" *ngIf="newForm.get('EmpId').invalid && newForm.get('EmpId').touched && newForm.get('EmpId').errors.required">Employee ID can't be blank</span>
+
+            <span class="text-danger" *ngIf="newForm.get('EmpId').invalid && newForm.get('EmpId').touched && newForm.get('EmpId').errors.min">Employee ID should be greater than or equal to 100</span>
+          </div>
+        </div>
+
+
+        <!-- is-valid    : green
+        is-invalid : red -->
+
+        <div class="form-group form-row">
+          <label for="empName" class="col-md-3 col-form-label">Employee Name:</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Employee Name" name="empName" formControlName="EmpName">
+
+            <span class="text-danger" *ngIf="newForm.get('EmpName').invalid && newForm.get('EmpName').touched && newForm.get('EmpName').errors.required">Employee Name can't be blank</span>
+
+            <span class="text-danger" *ngIf="newForm.get('EmpName').invalid && newForm.get('EmpName').touched && newForm.get('EmpName').errors.pattern">Employee Name can contain alphabets, dot (.) and space</span>
+          </div>
+        </div>
+
+
+
+        <div class="form-group form-row">
+          <label for="email" class="col-md-3 col-form-label">Email:</label>
+          <div class="col-md-9">
+            <input type="text" class="form-control" placeholder="Email" name="email" formControlName="Email">
+
+            <span class="text-danger" *ngIf="newForm.get('Email').invalid && newForm.get('Email').touched && newForm.get('Email').errors.email">Email should be in correct format</span>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-success" (click)="onAddClick()">Add</button>
+        </div>
+
+      </form>
+    </div>
+    <!-- right box ends -->
+
+  </div>
+</div>

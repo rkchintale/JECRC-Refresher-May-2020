@@ -1,0 +1,40 @@
+<div *ngIf="isLoggedIn == true; then two; else one"></div>
+
+<ng-template #one>
+  <h1>Login</h1>
+</ng-template>
+
+<ng-template #two>
+  <h1>Logged-in</h1>
+</ng-template>
+
+
+<form>
+  <div>
+    Username: <input type="text" name="username" [(ngModel)]="username" />
+  </div>
+  <div>
+    Password: <input type="password" name="password" [(ngModel)]="password" />
+  </div>
+
+  <div>
+    <button (click)="onLoginClick()">Login</button>
+  </div>
+
+  <div [style.color]="c">
+    {{message}}
+  </div>
+</form>
+
+
+<h1>Persons</h1>
+<table border="1">
+
+  <tr *ngFor="let person of persons">
+    <td>{{person.PersonName}}</td>
+    <td>{{person.Email}}</td>
+  </tr>
+
+</table>
+
+
