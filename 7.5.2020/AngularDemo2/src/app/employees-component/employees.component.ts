@@ -32,7 +32,17 @@ export class EmployeesComponent
   //ngOnInit
   ngOnInit()
   {
-    this.employees = this.empService.getEmployees();
+    this.empService.getEmployees().subscribe(
+
+      (response: Employee[]) => {
+        console.log(response);
+        this.employees = response;
+      }, //success
+
+      (error) => {
+        console.log(error);
+      } //failure
+    );
   }
 
   //methods
@@ -46,10 +56,10 @@ export class EmployeesComponent
       console.log(this.newForm.value.EmpId);
 
       //create emp object from the value of form
-      var emp = new Employee(this.newForm.value.EmpId, this.newForm.value.EmpName, this.newForm.value.Email);
+      //var emp = new Employee(this.newForm.value.EmpId, this.newForm.value.EmpName, this.newForm.value.Email);
 
       //add object to array
-      this.employees.push(emp);
+      //this.employees.push(emp);
 
       //clear textboxes
       this.newForm.reset();

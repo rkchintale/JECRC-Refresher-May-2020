@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { EmployeesService } from '../employees.service';
 
 @Component({
   selector: 'home-comp',
@@ -7,13 +8,6 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent
 {
-  constructor()
-  {
-  }
-
-  ngOnInit()
-  {
-  }
 }
 
 

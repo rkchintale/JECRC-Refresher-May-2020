@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Employee } from './Employee';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable( )
 export class EmployeesService
 {
-  getEmployees(): Employee[]
+  constructor(private httpClient: HttpClient)
   {
-    var emps = [
-      new Employee(101, "Scott", "scott@gmail.com"),
-      new Employee(103, "Smith", "smith@gmail.com"),
-      new Employee(104, "Allen", "allen@gmail.com"),
-      new Employee(105, "Ford", "ford@gmail.com"),
-      new Employee(106, "John", "john@gmail.com"),
-      new Employee(107, "Jones", "jones@gmail.com"),
-      new Employee(108, "Jeff", "jeff@gmail.com")
-    ];
-    return emps;
+  }
+
+  apiPrefix: string = "http://localhost:55818";
+
+  getEmployees()
+  {
+    return this.httpClient.get<Employee[]>(this.apiPrefix + "/api/employees");
   }
 }
 
+
+
+//200 = OK
+//400 = Bad Request
+//404 = Not Found
+//500 = Internal Server Error (exception at server side)

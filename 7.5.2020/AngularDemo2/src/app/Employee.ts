@@ -1,14 +1,16 @@
 export class Employee
 {
-  empId: number;
-  empName: string;
-  email: string;
+  EmpID: number;
+  EmpName: string;
+  DeptNo: number;
+  Salary: number;
 
-  constructor(empId: number, empName: string, email: string)
+  constructor(empId: number, empName: string, deptNo: number, salary: number)
   {
-    this.empId = empId;
-    this.empName = empName;
-    this.email = email;
+    this.EmpID = empId;
+    this.EmpName = empName;
+    this.DeptNo = deptNo;
+    this.Salary = salary;
   }
 }
 

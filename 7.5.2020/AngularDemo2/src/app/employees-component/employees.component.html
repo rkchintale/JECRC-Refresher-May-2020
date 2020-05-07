@@ -8,15 +8,17 @@
         <tr class="table-dark text-dark">
           <th>Emp ID</th>
           <th>Emp Name</th>
-          <th>Email</th>
+          <th>Dept No</th>
+          <th>Salary</th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let emp of employees">
-          <td>{{emp.empId | words}}</td>
-          <td>{{emp.empName | uppercase}}</td>
-          <td>{{emp.email}}</td>
+          <td>{{emp.EmpID}}</td>
+          <td>{{emp.EmpName}}</td>
+          <td>{{emp.DeptNo}}</td>
+          <td>{{emp.Salary}}</td>
         </tr>
       </tbody>
     </table>
