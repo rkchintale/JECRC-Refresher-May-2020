@@ -1,0 +1,71 @@
+ng new appname --routing
+
+Steps:
+   1. package.json
+   
+			"@angular/router": "~9.1.4",
+			
+			npm install
+			
+			
+	2. app\app-routing.module.ts
+	
+	import { NgModule } from '@angular/core';
+	import { Routes, RouterModule } from '@angular/router';
+
+
+	const routes: Routes = [];
+
+	@NgModule({
+	  imports: [RouterModule.forRoot(routes)],
+	  exports: [RouterModule]
+	})
+	export class AppRoutingModule { }
+
+
+
+	3. app.module.ts
+	
+	  imports: [
+			AppRoutingModule,
+			...
+		  ],
+		  
+		  
+	4. Create components
+			HomeComponent etc.
+	
+	5. Add routes to app-routing.module.ts
+			const routes: Routes = [
+			  { path: "home", component: HomeComponent },
+			  { path: "employees", component: EmployeesComponent },
+			  { path: "registration", component: RegistrationComponent },
+			  { path: "", redirectTo: "/home", pathMatch: "full" },
+			  { path: "**", redirectTo: "/home" },
+			];
+
+	
+	6. Add hyperlinks in app.component.html
+	
+			<div>
+			  <a [routerLink]=" [ '/home' ] ">Home</a> |&nbsp;
+			  <a [routerLink]=" [ '/employees' ] ">Employees</a> |&nbsp;
+			  <a [routerLink]=" [ '/registration' ] ">Registration</a> |&nbsp;
+			</div>
+
+	7. Add router-outlet in app.component.html
+			<router-outlet></router-outlet>
+	
+	
+	
+Component
+--------------
+
+
+		sample-component   (folder)
+		       - sample.component.ts
+			   - sample.component.html
+			   - sample.component.css
+			   
+		sample = name of your component
+		
