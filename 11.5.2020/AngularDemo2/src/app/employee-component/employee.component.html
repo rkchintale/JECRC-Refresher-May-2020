@@ -1,0 +1,55 @@
+<h3>Employee</h3>
+
+<div class="row">
+  <div class="col-6 mx-auto">
+    
+    <!-- EmpID starts -->
+    <div class="form-row form-group">
+      <label for="EmpID" class="col-form-label col-3">Emp ID</label>
+      <div class="col-9">
+        <input type="text" class="form-control" placeholder="Emp ID" name="EmpID" [(ngModel)]="currentEmployee.EmpID">
+      </div>
+    </div>
+    <!-- EmpID ends -->
+
+
+    <!-- EmpName starts -->
+    <div class="form-row form-group">
+      <label for="EmpName" class="col-form-label col-3">Emp Name</label>
+      <div class="col-9">
+        <input type="text" class="form-control" placeholder="Employee Name" name="EmpName" [(ngModel)]="currentEmployee.EmpName">
+      </div>
+    </div>
+    <!-- EmpName ends -->
+
+
+
+    <!-- DeptNo starts -->
+    <div class="form-row form-group">
+      <label for="DeptNo" class="col-form-label col-3">Dept No</label>
+      <div class="col-9">
+        <input type="text" class="form-control" placeholder="Dept No" name="DeptNo" [(ngModel)]="currentEmployee.DeptNo">
+      </div>
+    </div>
+    <!-- DeptNo ends -->
+
+
+    <!-- Salary starts -->
+    <div class="form-row form-group">
+      <label for="Salary" class="col-form-label col-3">Salary</label>
+      <div class="col-9">
+        <input type="text" class="form-control" placeholder="Salary" name="Salary" [(ngModel)]="currentEmployee.Salary">
+      </div>
+    </div>
+    <!-- Salary ends -->
+
+
+    <div class="row">
+      <div class="col-12 mt-3 text-right">
+        <a [routerLink]=" [ '/admin', 'employees' ] ">Back to Employees</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+

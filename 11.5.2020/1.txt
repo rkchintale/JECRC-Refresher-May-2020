@@ -1,0 +1,36 @@
+parameter = supplying some input value
+
+Search for employee
+    - parameter:  empname
+
+exam result of a student
+    - parameter:   student roll no
+
+------------------------------------------------
+
+
+router parameter
+  http://localhost:4200/employes
+  
+  -------   --------------        --------------
+  -------   --------------        --------------
+  -------   --------------        --------------
+  -------   --------------        --------------
+  -------   --------------        --------------
+  
+  http://localhost:4200/employee/101
+  
+   -------   
+   --------------      
+   --------------
+   
+   
+   http://localhost:4200/employee/102
+  
+   -------   
+   --------------      
+   --------------
+   
+   
+   http://localhost:4200/employee/:empno
+   

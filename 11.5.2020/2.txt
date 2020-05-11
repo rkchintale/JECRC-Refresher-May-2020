@@ -1,0 +1,26 @@
+Pre:
+    - Custom modules
+				Module = collection of components, pipes, directives
+				
+				Ex:
+							100 components
+									20 components = AdminModule
+									30 components = AgentModule
+									50 components = AppModule
+									
+							20 pipes
+							15 directives
+				
+				
+				not a good habit to place all components in AppModule.
+				
+	- Nested routes
+	
+
+
+Lazy loading
+	AppModule  = 50 kb
+	AdminModule = 20 kb
+	AgentModule = 30 kb
+	
+	
